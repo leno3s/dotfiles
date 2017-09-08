@@ -27,4 +27,4 @@ set wildmode=list:longest
 
 set noswapfile
 set nobackup
-
+set noundofile
