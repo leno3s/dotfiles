@@ -1,7 +1,5 @@
-﻿# Created by newuser for 5.1.1
-
-
-# lang set
+﻿# .zshrc
+setopt nonomatch
 export LANG=ja_JP.UTF-8
 # Emacs ライクな操作を有効にする（文字入力中に Ctrl-F,B でカーソル移動など）
 # Vi ライクな操作が好みであれば `bindkey -v` とする
@@ -63,12 +61,17 @@ WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 # color scheme
 autoload colors
 colors
-PROMPT="%{$fg[green]%}%m%(!.#.$) %{$reset_color%}"
+
+# prompt
+local cdir="%{$fg[yellow]%}[%d]%{$reset_color%}"
+local info="%{$fg[cyan]%}%n%{$reset_color%} @ %{$fg[green]%}%m%{$reset_color%} $ "
+PROMPT="$cdir
+$info"
 PROMPT2="%{$fg[green]%}%_> %{$reset_color%}"
 SPROMPT="%{$fg[red]%}correct: %R -> %r [nyae]? %{$reset_color%}"
-RPROMPT="%{$fg[cyan]%}[%~]%{$reset_color%}"
 
 # aliases
 alias ls='ls -F --color=auto --show-control-chars -I "NTUSER.DAT*"'
 alias lls='ls -al -F --color=auto --show-control-chars -I "NTUSER.DAT*"'
+
 

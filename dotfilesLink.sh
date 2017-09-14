@@ -1,6 +1,6 @@
 ﻿#!/bin/sh
-ln -sf .vimrc $HOME/.vimrc
-ln -sf .gvimrc $HOME/.gvimrc
+ln -sf $HOME/dotfiles/.vimrc $HOME/.vimrc
+ln -sf $HOME/dotfiles/.gvimrc $HOME/.gvimrc
 # ln -sf ~/dotfiles/.bash_profile ~/.bash_profile
-cp zshenv $HOME/.zshenv
+ln -sf $HOME/dotfiles/zshenv $HOME/.zshenv
 
