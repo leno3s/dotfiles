@@ -1,61 +1,62 @@
-﻿# .zshrc
+# Created by newuser for 5.1.2
+
 setopt nonomatch
 export LANG=ja_JP.UTF-8
-# Emacs ライクな操作を有効にする（文字入力中に Ctrl-F,B でカーソル移動など）
-# Vi ライクな操作が好みであれば `bindkey -v` とする
+# Emacs ���C�N�ȑ����L���ɂ���i�������͒��� Ctrl-F,B �ŃJ�[�\���ړ��Ȃǁj
+# Vi ���C�N�ȑ��삪�D�݂ł���� `bindkey -v` �Ƃ���
 bindkey -v
 
-# 自動補完を有効にする
-# コマンドの引数やパス名を途中まで入力して <Tab> を押すといい感じに補完してくれる
-# 例： `cd path/to/<Tab>`, `ls -<Tab>`
+# �����⊮��L���ɂ���
+# �R�}���h�̈�����p�X����r���܂œ��͂��� <Tab> �������Ƃ��������ɕ⊮���Ă����
+# ��F `cd path/to/<Tab>`, `ls -<Tab>`
 autoload -U compinit; compinit
 setopt auto_param_slash
 setopt print_eight_bit
 
-# 入力したコマンドが存在せず、かつディレクトリ名と一致するなら、ディレクトリに cd する
-# 例： /usr/bin と入力すると /usr/bin ディレクトリに移動
+# ���͂����R�}���h�����݂����A���f�B���N�g�����ƈ�v����Ȃ�A�f�B���N�g���� cd ����
+# ��F /usr/bin �Ɠ��͂���� /usr/bin �f�B���N�g���Ɉړ�
 setopt auto_cd
 
-# ↑を設定すると、 .. とだけ入力したら1つ上のディレクトリに移動できるので……
-# 2つ上、3つ上にも移動できるようにする
+# ����ݒ肷��ƁA .. �Ƃ������͂�����1��̃f�B���N�g���Ɉړ��ł���̂Łc�c
+# 2��A3��ɂ��ړ��ł���悤�ɂ���
 alias ...='cd ../..'
 alias ....='cd ../../..'
 
-# "~hoge" が特定のパス名に展開されるようにする（ブックマークのようなもの）
-# 例： cd ~hoge と入力すると /long/path/to/hogehoge ディレクトリに移動
+# "~hoge" ������̃p�X���ɓW�J�����悤�ɂ���i�u�b�N�}�[�N�̂悤�Ȃ��́j
+# ��F cd ~hoge �Ɠ��͂���� /long/path/to/hogehoge �f�B���N�g���Ɉړ�
 hash -d hoge=/long/path/to/hogehoge
 
-# cd した先のディレクトリをディレクトリスタックに追加する
-# ディレクトリスタックとは今までに行ったディレクトリの履歴のこと
-# `cd +<Tab>` でディレクトリの履歴が表示され、そこに移動できる
+# cd ������̃f�B���N�g�����f�B���N�g���X�^�b�N�ɒǉ�����
+# �f�B���N�g���X�^�b�N�Ƃ͍��܂łɍs�����f�B���N�g���̗����̂���
+# `cd +<Tab>` �Ńf�B���N�g���̗������\������A�����Ɉړ��ł���
 setopt auto_pushd
 
-# pushd したとき、ディレクトリがすでにスタックに含まれていればスタックに追加しない
+# pushd �����Ƃ��A�f�B���N�g�������łɃX�^�b�N�Ɋ܂܂�Ă���΃X�^�b�N�ɒǉ����Ȃ�
 setopt pushd_ignore_dups
 
-# 拡張 glob を有効にする
-# glob とはパス名にマッチするワイルドカードパターンのこと
-# （たとえば `mv hoge.* ~/dir` における "*"）
-# 拡張 glob を有効にすると # ~ ^ もパターンとして扱われる
-# どういう意味を持つかは `man zshexpn` の FILENAME GENERATION を参照
+# �g�� glob ��L���ɂ���
+# glob �Ƃ̓p�X���Ƀ}�b�`���郏�C���h�J�[�h�p�^�[���̂���
+# �i���Ƃ��� `mv hoge.* ~/dir` �ɂ����� "*"�j
+# �g�� glob ��L���ɂ���� # ~ ^ ���p�^�[���Ƃ��Ĉ�����
+# �ǂ������Ӗ��������� `man zshexpn` �� FILENAME GENERATION ���Q��
 setopt extended_glob
 
-# 入力したコマンドがすでにコマンド履歴に含まれる場合、履歴から古いほうのコマンドを削除する
-# コマンド履歴とは今まで入力したコマンドの一覧のことで、上下キーでたどれる
+# ���͂����R�}���h�����łɃR�}���h�����Ɋ܂܂��ꍇ�A��������Â��ق��̃R�}���h���폜����
+# �R�}���h�����Ƃ͍��܂œ��͂����R�}���h�̈ꗗ�̂��ƂŁA�㉺�L�[�ł��ǂ��
 setopt hist_ignore_all_dups
 
-# コマンドがスペースで始まる場合、コマンド履歴に追加しない
-# 例： <Space>echo hello と入力
+# �R�}���h���X�y�[�X�Ŏn�܂�ꍇ�A�R�}���h�����ɒǉ����Ȃ�
+# ��F <Space>echo hello �Ɠ���
 setopt hist_ignore_space
 
-# <Tab> でパス名の補完候補を表示したあと、
-# 続けて <Tab> を押すと候補からパス名を選択できるようになる
-# 候補を選ぶには <Tab> か Ctrl-N,B,F,P
+# <Tab> �Ńp�X���̕⊮����\���������ƁA
+# ������ <Tab> �������ƌ�₩��p�X����I���ł���悤�ɂȂ�
+# ����I�Ԃɂ� <Tab> �� Ctrl-N,B,F,P
 zstyle ':completion:*:default' menu select=1
 
-# 単語の一部として扱われる文字のセットを指定する
-# ここではデフォルトのセットから / を抜いたものとする
-# こうすると、 Ctrl-W でカーソル前の1単語を削除したとき、 / までで削除が止まる
+# �P��̈ꕔ�Ƃ��Ĉ����镶���̃Z�b�g���w�肷��
+# �����ł̓f�t�H���g�̃Z�b�g���� / �𔲂������̂Ƃ���
+# ��������ƁA Ctrl-W �ŃJ�[�\���O��1�P����폜�����Ƃ��A / �܂łō폜���~�܂�
 WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 
 # color scheme
