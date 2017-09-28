@@ -28,3 +28,7 @@ set wildmode=list:longest
 set noswapfile
 set nobackup
 set noundofile
+
+" スペース, タブの可視化
+set list
+
