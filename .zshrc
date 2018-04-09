@@ -12,6 +12,8 @@ hash -d hoge=/long/path/to/hogehoge
 setopt auto_pushd
 setopt pushd_ignore_dups
 setopt extended_glob
+
+# histroy
 setopt hist_ignore_all_dups
 setopt hist_ignore_space
 zstyle ':completion:*:default' menu select=1
