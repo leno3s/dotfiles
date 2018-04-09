@@ -1,16 +1,18 @@
-﻿colorscheme industry
+﻿" theme, font
+colorscheme industry
 set guifont=MigMix_1M:h8
+set encoding=utf-8
 
-"ビープ音を無効にする
+" beep sound
 set visualbell t_vb=
 
-" 見た目系
-" 行番号を表示
+" Line number
 set number
-" 現在の行を強調表示
+
+" cursor line
 set cursorline
-" 現在の行を強調表示（縦）
 set cursorcolumn
+
 " 行末の1文字先までカーソルを移動できるように
 set virtualedit=onemore
 " インデントはスマートインデント
@@ -23,12 +25,15 @@ set showmatch
 set laststatus=2
 " コマンドラインの補完
 set wildmode=list:longest
-" 折り返し時に表示行単位での移動できるようにする
 
+" swap, backup files
 set noswapfile
 set nobackup
 set noundofile
 
-" スペース, タブの可視化
+" visualize space, tab, etc
 set list
+set listchars=trail:.
+set listchars=tab:>-
+set listchars=eol:$
 
