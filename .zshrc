@@ -35,7 +35,8 @@ SPROMPT="%{$fg[red]%}correct: %R -> %r [nyae]? %{$reset_color%}"
 # aliases
 alias ls='ls -F --color=auto --show-control-chars -I "NTUSER.DAT*"'
 alias ll='ls -al -F --color=auto --show-control-chars -I "NTUSER.DAT*"'
-alias start='cmd.exe /c start'
+alias cmd='cmd.exe /c '
+alias exp='explorer.exe /c'
 
 # EDITOR
 export EDITOR='vim'
