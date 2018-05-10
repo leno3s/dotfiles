@@ -1,3 +1,4 @@
+# enviroment
 setopt nonomatch
 export LANG=ja_JP.UTF-8
 bindkey -v
@@ -7,13 +8,14 @@ setopt auto_param_slash
 setopt print_eight_bit
 setopt auto_cd
 
+export DISPLAY=localhost:0.0
+
 hash -d hoge=/long/path/to/hogehoge
 
+# histroy
 setopt auto_pushd
 setopt pushd_ignore_dups
 setopt extended_glob
-
-# histroy
 setopt hist_ignore_all_dups
 setopt hist_ignore_space
 zstyle ':completion:*:default' menu select=1
@@ -32,90 +34,13 @@ SPROMPT="%{$fg[red]%}correct: %R -> %r [nyae]? %{$reset_color%}"
 
 # aliases
 alias ls='ls -F --color=auto --show-control-chars -I "NTUSER.DAT*"'
-alias lls='ls -al -F --color=auto --show-control-chars -I "NTUSER.DAT*"'
+alias ll='ls -al -F --color=auto --show-control-chars -I "NTUSER.DAT*"'
+alias start='cmd.exe /c start'
 
 # EDITOR
 export EDITOR='vim'
 export VISUAL='vim'
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# path
+export PATH=$PATH:/mnt/c/Users/3sodn/git/Misc/bin
 
