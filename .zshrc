@@ -3,7 +3,8 @@ setopt nonomatch
 export LANG=ja_JP.UTF-8
 bindkey -v
 
-autoload -U compinit; compinit
+autoload -U compinit
+compinit -u
 setopt auto_param_slash
 setopt print_eight_bit
 setopt auto_cd
@@ -34,11 +35,11 @@ zstyle ':vcs_info:git:*' unstagedstr "%F{red}+"
 zstyle ':vcs_info:*' formats "%F{green}%c%u[%b]%f"
 zstyle ':vcs_info:*' actionformats '[%b|%a]'
 precmd () { vcs_info }
-local PROMPT="%{${fg[yellow]}%}[%~]%{${reset_color}%}"
+local PROMPT='%{${fg[yellow]}%}[%~]%{${reset_color}%}'
 local info="%{$fg[cyan]%}%n%{$reset_color%} @ %{$fg[green]%}%m%{$reset_color%} $ "
-local gitst="%{$fg[cyan]%}${vcs_info_msg_0_}%{$reset_color%}"
-PROMPT="$PROMPT $gitst
-$info"
+local gitst='%{$fg[cyan]%}${vcs_info_msg_0_}%{$reset_color%}'
+PROMPT="${PROMPT} ${gitst}
+${info}"
 PROMPT2="%{$fg[green]%}%_> %{$reset_color%}"
 SPROMPT="%{$fg[red]%}correct: %R -> %r [nyae]? %{$reset_color%}"
 
@@ -47,6 +48,24 @@ alias ls='ls -F --color=auto --show-control-chars -I "NTUSER.DAT*"'
 alias ll='ls -al -F --color=auto --show-control-chars -I "NTUSER.DAT*"'
 alias cmd='cmd.exe /c '
 alias exp='explorer.exe .'
+function do_enter() {
+    if [ -n "$BUFFER" ]; then
+        zle accept-line
+        return 0
+    fi
+    echo
+    ls -a
+    # ↓おすすめ
+    # ls_abbrev
+    if [ "$(git rev-parse --is-inside-work-tree 2> /dev/null)" = 'true' ]; then
+        echo -e "\e[0;33m--- git status ---\e[0m"
+        git status -sb
+    fi
+    zle reset-prompt
+    return 0
+}
+zle -N do_enter
+bindkey '^m' do_enter
 
 # EDITOR
 export EDITOR='vim'
