@@ -10,7 +10,7 @@ setopt print_eight_bit
 setopt auto_cd
 
 export DISPLAY=localhost:0.0
-
+umask 022
 hash -d hoge=/long/path/to/hogehoge
 
 # histroy
@@ -72,5 +72,8 @@ export EDITOR='vim'
 export VISUAL='vim'
 
 # path
+export PYENV_ROOT=~/.pyenv
 export PATH=$PATH:/mnt/c/Users/3sodn/git/Misc/bin
+export PATH=$PATH:$PYENV_ROOT/bin
+eval "$(pyenv init -)"
 
