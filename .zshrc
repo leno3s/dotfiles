@@ -10,6 +10,7 @@ setopt print_eight_bit
 setopt auto_cd
 
 export DISPLAY=localhost:0.0
+export MY_MISC_BIN=~/git/Misc/bin/
 umask 022
 hash -d hoge=/long/path/to/hogehoge
 
