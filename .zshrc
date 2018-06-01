@@ -11,9 +11,19 @@ setopt auto_cd
 
 export DISPLAY=localhost:0.0
 export MY_MISC_BIN=~/git/Misc/bin/
+export PATH=$PATH:/mnt/c/Users/3sodn/git/Misc/bin
 export whome=/mnt/c/Users/3sodn/
 umask 022
 hash -d hoge=/long/path/to/hogehoge
+
+# EDITOR
+export EDITOR='vim'
+export VISUAL='vim'
+
+# path
+export PYENV_ROOT=~/.pyenv
+export PATH=$PATH:$PYENV_ROOT/bin
+eval "$(pyenv init -)"
 
 # histroy
 setopt auto_pushd
@@ -58,8 +68,6 @@ function do_enter() {
     fi
     echo
     ls -a
-    # ↓おすすめ
-    # ls_abbrev
     if [ "$(git rev-parse --is-inside-work-tree 2> /dev/null)" = 'true' ]; then
         echo -e "\e[0;33m--- git status ---\e[0m"
         git status -sb
@@ -70,13 +78,17 @@ function do_enter() {
 zle -N do_enter
 bindkey '^m' do_enter
 
-# EDITOR
-export EDITOR='vim'
-export VISUAL='vim'
+# for wsl-terminal
+[[ -z "$TMUX" && -n "$USE_TMUX" ]] && {
+    [[ -n "$ATTACH_ONLY" ]] && {
+        tmux a 2>/dev/null || {
+            cd && exec tmux
+        }
+        exit
+    }
 
-# path
-export PYENV_ROOT=~/.pyenv
-export PATH=$PATH:/mnt/c/Users/3sodn/git/Misc/bin
-export PATH=$PATH:$PYENV_ROOT/bin
-eval "$(pyenv init -)"
+    tmux new-window -c "$PWD" 2>/dev/null && exec tmux a
+    exec tmux
+}
+
 
