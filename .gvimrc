@@ -121,3 +121,5 @@ set tabstop=2
 set shiftwidth=2
 set autoindent
 
+set guioptions=grLt
+
