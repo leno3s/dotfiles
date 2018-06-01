@@ -1,16 +1,5 @@
 #!/bin/sh
 
-export DISPLAY=localhost:0.0
-export PATH="$HOME/.pyenv/bin:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
-
-if [ $SHELL = /bin/bash ]; then
-	export SHELL=/bin/zsh
-	exec $SHELL
-else
-	/bin/bash $*
-fi
 # set variable identifying the chroot you work in (used in the prompt below)
 if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
 	    debian_chroot=$(cat /etc/debian_chroot)
