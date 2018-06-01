@@ -33,12 +33,13 @@ set showmatch
 set matchtime=1
 set matchpairs& matchpairs+=<:>
 
+" NeoBundle
 set nocompatible
 filetype plugin indent on
 
 if has('vim_starting')
-    set runtimepath+=$whome/.vim/bundle/neobundle.vim/
-    call neobundle#begin(expand('$whome/.vim/bundle/'))
+    set runtimepath+=~/.vim/bundle/neobundle.vim/
+    call neobundle#begin(expand('$HOME/.vim/bundle/'))
     NeoBundleFetch 'Shougo/neobundle.vim'
     NeoBundle 'Shougo/unite.vim'
     NeoBundle 'Shougo/neomru.vim'
@@ -47,6 +48,7 @@ if has('vim_starting')
     call neobundle#end()
 endif
 
+" colors
 colorscheme molokai
 if &term =~ "xterm-256color" || "screen-256color"
   set t_Co=256
