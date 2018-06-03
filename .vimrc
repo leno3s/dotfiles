@@ -13,7 +13,6 @@ set cursorline
 set cursorcolumn
 
 set virtualedit=onemore
-set smartindent
 set laststatus=2
 set wildmode=list:longest
 
@@ -32,6 +31,14 @@ set visualbell
 set showmatch
 set matchtime=1
 set matchpairs& matchpairs+=<:>
+
+" indent
+set expandtab
+set tabstop=4
+set shiftwidth=4
+set smarttab
+set autoindent
+set smartindent
 
 " NeoBundle
 set nocompatible
