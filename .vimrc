@@ -52,6 +52,7 @@ if has('vim_starting')
     NeoBundle 'Shougo/neomru.vim'
     NeoBundle 'altercation/vim-colors-solarized'
     NeoBundle 'tomasr/molokai'
+    NeoBundle 'cohama/lexima.vim'
     call neobundle#end()
 endif
 
