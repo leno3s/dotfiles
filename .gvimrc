@@ -90,7 +90,8 @@ set virtualedit=onemore
 set visualbell
 " コマンドラインの補完
 set wildmode=list:longest
-" 折り返し時に表示行単位での移動できるようにする
+" backspace で字消し
+set backspace=2
 
 " インデントの設定
 set expandtab
