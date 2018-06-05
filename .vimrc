@@ -10,7 +10,7 @@ set number
 
 " cursor line
 set cursorline
-set cursorcolumn
+" set cursorcolumn
 
 set virtualedit=onemore
 set laststatus=2
