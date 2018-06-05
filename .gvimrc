@@ -65,9 +65,6 @@ set mousehide
 " guiの設定
 set guioptions=grLt
 
-
-" Copyright (C) 2009-2016 KaoriYa/MURAOKA Taro
-
 "--------------------------------------------------------------------------
 " 見た目に関する設定
 
@@ -93,7 +90,8 @@ set virtualedit=onemore
 set visualbell
 " コマンドラインの補完
 set wildmode=list:longest
-" 折り返し時に表示行単位での移動できるようにする
+" backspace で字消し
+set backspace=2
 
 " インデントの設定
 set expandtab
@@ -101,6 +99,26 @@ set et
 set tabstop=2
 set shiftwidth=2
 set smartindent
+
+" ウィンドウ位置の保持
+let g:save_window_file = expand('~/.vimwinpos')
+augroup SaveWindow
+  autocmd!
+  autocmd VimLeavePre * call s:save_window()
+  function! s:save_window()
+    let options = [
+      \ 'set columns=' . &columns,
+      \ 'set lines=' . &lines,
+      \ 'winpos ' . getwinposx() . ' ' . getwinposy(),
+      \ ]
+    call writefile(options, g:save_window_file)
+  endfunction
+augroup END
+
+if filereadable(g:save_window_file)
+  execute 'source' g:save_window_file
+endif
+
 
 gui
 autocmd vimenter * set transparency=220
