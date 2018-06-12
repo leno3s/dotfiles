@@ -45,15 +45,17 @@ set nocompatible
 filetype plugin indent on
 
 if has('vim_starting')
-    set runtimepath+=~/.vim/bundle/neobundle.vim/
-    call neobundle#begin(expand('$HOME/.vim/bundle/'))
-    NeoBundleFetch 'Shougo/neobundle.vim'
-    NeoBundle 'Shougo/unite.vim'
-    NeoBundle 'Shougo/neomru.vim'
-    NeoBundle 'altercation/vim-colors-solarized'
-    NeoBundle 'tomasr/molokai'
-    NeoBundle 'cohama/lexima.vim'
-    call neobundle#end()
+    set runtimepath+=~/.vim/dein/repos/github.com/Shougo/dein.vim
+    if dein#load_state('~/.vim/dein')
+        call dein#begin('~/.vim/dein')
+        call dein#add('Shougo/unite.vim')
+        call dein#add('Shougo/neomru.vim')
+        call dein#add('altercation/vim-colors-solarized')
+        call dein#add('tomasr/molokai')
+        call dein#add('cohama/lexima.vim')
+        call dein#end()
+        call dein#save_state()
+    endif
 endif
 
 " colors
