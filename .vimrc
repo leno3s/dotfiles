@@ -40,6 +40,12 @@ set smarttab
 set autoindent
 set smartindent
 
+" templates
+if has('vim_starting')
+    autocmd BufNewFile *.cpp : 0r ~/dotfiles/templates/cpp.cpp
+    autocmd BufNewFile *.tex : 0r ~/dotfiles/templates/tex.tex
+endif
+
 " NeoBundle
 set nocompatible
 filetype plugin indent on
