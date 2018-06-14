@@ -11,6 +11,11 @@ set number
 " cursor line
 set cursorline
 " set cursorcolumn
+" cursor types
+let &t_ti.="\e[1 q"
+let &t_SI.="\e[5 q"
+let &t_EI.="\e[1 q"
+let &t_te.="\e[0 q"
 
 set virtualedit=onemore
 set laststatus=2

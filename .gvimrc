@@ -35,7 +35,7 @@ set cmdheight=2
 "
 if has('multi_byte_ime') || has('xim')
   " IME ON時のカーソルの色を設定(設定例:紫)
-  highlight CursorIM guibg=Blue guifg=NONE
+  highlight CursorIM guibg=Purple guifg=NONE
   " 挿入モード・検索モードでのデフォルトのIME状態設定
   set iminsert=0 imsearch=0
   if has('xim') && has('GUI_GTK')
