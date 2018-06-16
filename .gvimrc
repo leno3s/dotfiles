@@ -123,4 +123,4 @@ endif
 gui
 autocmd vimenter * set transparency=220
 autocmd focusgained * set transparency=220
-autocmd focuslost * set transparency=128
+autocmd focuslost * set transparency=200

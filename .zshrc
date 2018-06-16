@@ -13,7 +13,7 @@ unsetopt bgnice
 export DISPLAY=localhost:0.0
 export MY_MISC_BIN=~/git/Misc/bin/
 export PATH=$PATH:/mnt/c/Users/3sodn/git/Misc/bin
-export whome=/mnt/c/Users/3sodn/
+export WHOME=/mnt/c/Users/3sodn/
 umask 022
 hash -d hoge=/long/path/to/hogehoge
 
@@ -58,10 +58,13 @@ SPROMPT="%{$fg[red]%}correct: %R -> %r [nyae]? %{$reset_color%}"
 
 # aliases
 alias ls='ls -F --color=auto --show-control-chars -I "NTUSER.DAT*"'
+alias la='ls -a -F --color=auto --show-control-chars -I "NTUSER.DAT*"'
 alias ll='ls -al -F --color=auto --show-control-chars -I "NTUSER.DAT*"'
+alias lmk='latexmk'
+alias lmkc='latexmk -c'
 alias cmd='cmd.exe /c '
 alias exp='explorer.exe .'
-alias cdw='cd $whome'
+alias cdw='cd $WHOME'
 function do_enter() {
     if [ -n "$BUFFER" ]; then
         zle accept-line
