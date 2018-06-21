@@ -55,7 +55,7 @@ if has('vim_starting')
     autocmd BufNewFile *.tex : 0r ~/dotfiles/templates/tex.tex
 endif
 
-" NeoBundle
+" dein.vim
 set nocompatible
 filetype plugin indent on
 
@@ -63,11 +63,8 @@ if has('vim_starting')
     set runtimepath+=~/.vim/dein/repos/github.com/Shougo/dein.vim
     if dein#load_state('~/.vim/dein')
         call dein#begin('~/.vim/dein')
-        call dein#add('Shougo/unite.vim')
-        call dein#add('Shougo/neomru.vim')
-        call dein#add('altercation/vim-colors-solarized')
-        call dein#add('tomasr/molokai')
-        call dein#add('cohama/lexima.vim')
+        call dein#load_toml('~/dotfiles/dein.toml', {'lazy': 0})
+        call dein#load_toml('~/dotfiles/dein_lazy.toml', {'lazy': 1})
         call dein#end()
         call dein#save_state()
     endif
