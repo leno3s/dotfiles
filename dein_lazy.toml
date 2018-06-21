@@ -6,6 +6,10 @@ repo = 'Shougo/neomru.vim'
 on_source = ['unite.vim']
 
 [[plugins]]
+repo = 'vim-latex/vim-latex'
+on_ft = ['tex']
+
+[[plugins]]
 repo='prabirshrestha/vim-lsp'
 hook_add='''
 if executable('cquery')
