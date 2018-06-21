@@ -11,6 +11,7 @@ set number
 " cursor line
 set cursorline
 " set cursorcolumn
+
 " cursor types
 let &t_ti.="\e[1 q"
 let &t_SI.="\e[5 q"
@@ -25,6 +26,9 @@ set wildmode=list:longest
 set noswapfile
 set nobackup
 set noundofile
+
+" sync clipboard
+set clipboard+=unnamed
 
 " visualize space, tab, etc
 set list
