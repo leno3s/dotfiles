@@ -70,6 +70,18 @@ if has('vim_starting')
     endif
 endif
 
+" neocomplete.vim
+"
+" cquery
+function MakeCquery()
+      let temp = expand('%:p')
+      echo system('echo ''[{"directory": "/home/kutimoti/contest","command": "/usr/bin/c++  ' . temp . ' -std=c++11","file": "' . temp . '"}]'' > compile_commands.json')
+endfunction
+
+" vim-clang
+let g:clang_c_options='-std=c11'
+let g:clang_cpp_options = "-std=c++11 -stdlib=libc++"
+
 " colors
 colorscheme molokai
 if &term =~ "xterm-256color" || "screen-256color"
@@ -82,5 +94,6 @@ elseif &term =~ "xterm-color"
   set t_Sb=[4%dm
 endif
 
+call MakeCquery()
 syntax enable
 hi PmenuSel cterm=reverse ctermfg=33 ctermbg=222 gui=reverse guifg=#3399ff guibg=#f0e68c

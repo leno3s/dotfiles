@@ -12,6 +12,7 @@ setopt auto_cd
 export DISPLAY=localhost:0.0
 export MY_MISC_BIN=~/git/Misc/bin/
 export PATH=$PATH:/mnt/c/Users/3sodn/git/Misc/bin
+export PATH=$PATH:/mnt/c/Users/3sodn/git/cquery/build/release/bin
 export WHOME=/mnt/c/Users/3sodn/
 umask 022
 hash -d hoge=/long/path/to/hogehoge
