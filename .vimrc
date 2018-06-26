@@ -20,9 +20,20 @@ set number
 
 " -------------------------------
 " cursor line
-set cursorline
 " -------------------------------
+set cursorline
 " set cursorcolumn
+
+" -------------------------------
+" key mapping
+" -------------------------------
+if !has('gui_running')
+    augroup term_vim_c_space
+        autocmd!
+        autocmd VimEnter * map <Nul> <C-Space>
+        autocmd VimEnter * map! <Nul> <C-Space>
+    augroup END
+endif
 
 " -------------------------------
 " cursor types
@@ -52,10 +63,12 @@ set clipboard+=unnamed
 " visualize space, tab, etc
 " -------------------------------
 set list
-set listchars=trail:.
-set listchars=tab:>-
-set listchars=eol:$
-
+set listchars+=trail:·
+set listchars+=tab:>-
+set listchars+=space:·
+set listchars+=eol:¶
+highlight SpecialKey ctermfg=237 guifg=#3a3a3a
+highlight NonText ctermfg=66 guifg=#5f8787
 set visualbell
 set showmatch
 set matchtime=1
