@@ -92,28 +92,20 @@ if has('vim_starting')
     autocmd BufNewFile *.tex : 0r ~/dotfiles/templates/tex.tex
 endif
 
-" colors
-if &term =~ "xterm-256color" || "screen-256color"
-  set t_Co=256
-  set t_Sf=[3%dm
-  set t_Sb=[4%dm
-elseif &term =~ "xterm-color"
-  set t_Co=8
-  set t_Sf=[3%dm
-  set t_Sb=[4%dm
-endif
 
-syntax enable
-hi PmenuSel cterm=reverse ctermfg=33 ctermbg=222 gui=reverse guifg=#3399ff guibg=#f0e68c
+" -------------------------------
+" etc.
+" -------------------------------
+set nocompatible
+set shellslash
+filetype plugin on
+filetype indent on
+
+let g:tex_flavor='latex'
 
 " ===============================
 " dein.vim
 " ===============================
-
-" itsumono
-set nocompatible
-filetype plugin indent on
-
 " load toml
 if has('vim_starting')
     set runtimepath+=~/.vim/dein/repos/github.com/Shougo/dein.vim
@@ -126,3 +118,18 @@ if has('vim_starting')
     endif
 endif
 
+" -------------------------------
+" colors
+" -------------------------------
+if &term =~ "xterm-256color" || "screen-256color"
+  set t_Co=256
+  set t_Sf=[3%dm
+  set t_Sb=[4%dm
+elseif &term =~ "xterm-color"
+  set t_Co=8
+  set t_Sf=[3%dm
+  set t_Sb=[4%dm
+endif
+
+syntax on
+highlight PmenuSel cterm=reverse ctermfg=33 ctermbg=222 gui=reverse guifg=#3399ff guibg=#f0e68c
