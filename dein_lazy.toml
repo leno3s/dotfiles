@@ -5,6 +5,16 @@ on_source = ['unite.vim']
 [[plugins]]
 repo = 'vim-latex/vim-latex'
 on_ft = ['tex']
+hook_add='''
+let g:Tex_DefaultTargetFormat = 'pdf'
+let g:Tex_FormatDependency_pdf = 'pdf'
+
+let g:Tex_CompileRule_pdf = 'latexmk'
+
+let g:Tex_ViewRule_dvi = 'xdvi'
+let g:Tex_ViewRule_pdf = 'evince'
+let g:Tex_AutoFolding = 0
+'''
 
 
 [[plugins]]
