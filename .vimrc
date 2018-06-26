@@ -80,7 +80,6 @@ if has('vim_starting')
 endif
 
 " colors
-colorscheme industry
 if &term =~ "xterm-256color" || "screen-256color"
   set t_Co=256
   set t_Sf=[3%dm
