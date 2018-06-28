@@ -34,6 +34,7 @@ if !has('gui_running')
         autocmd VimEnter * map! <Nul> <C-Space>
     augroup END
 endif
+imap <C-Space> <C-x><C-o>
 
 " -------------------------------
 " cursor types

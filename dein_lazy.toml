@@ -16,7 +16,17 @@ let g:Tex_ViewRule_pdf = 'evince'
 let g:Tex_AutoFolding = 0
 '''
 
+[[plugins]]
+repo= 'vim-jp/cpp-vim'
+on_ft = ['c', 'cpp']
 
+[[plugins]]
+repo = 'justmao945/vim-clang'
+on_ft = ['c', 'cpp']
+hook_add='''
+let g:clang_c_options = '-std=c11'
+let g:clang_cpp_options = '-std=gnu++11 --pedantic-errors'
+'''
 [[plugins]]
 repo='pdavydov108/vim-lsp-cquery'
 on_ft = ['c', 'cpp', 'objc', 'objcpp']
