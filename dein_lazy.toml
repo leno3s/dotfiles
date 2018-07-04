@@ -27,12 +27,3 @@ hook_add='''
 let g:clang_c_options = '-std=c11'
 let g:clang_cpp_options = '-std=gnu++11 --pedantic-errors'
 '''
-[[plugins]]
-repo='pdavydov108/vim-lsp-cquery'
-on_ft = ['c', 'cpp', 'objc', 'objcpp']
-hook_add='''
-autocmd FileType c,cc,cpp,cxx,h,hpp nnoremap <leader>fv :LspCqueryDerived<CR>
-autocmd FileType c,cc,cpp,cxx,h,hpp nnoremap <leader>fc :LspCqueryCallers<CR>
-autocmd FileType c,cc,cpp,cxx,h,hpp nnoremap <leader>fb :LspCqueryBase<CR>
-autocmd FileType c,cc,cpp,cxx,h,hpp nnoremap <leader>fi :LspCqueryVars<CR>
-'''
