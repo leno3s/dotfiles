@@ -13,9 +13,12 @@ hook_post_update = 'make'
 
 [[plugins]]
 repo = 'tomasr/molokai'
+
+[[plugins]]
+repo = 'ErichDonGubler/vim-sublime-monokai'
 hook_add = '''
-    set background=dark
-    autocmd VimEnter * nested colorscheme molokai
+    let g:sublimemonokai_term_italic=0
+    autocmd VimEnter * nested colorscheme sublimemonokai
 '''
 
 [[plugins]]
