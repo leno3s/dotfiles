@@ -61,3 +61,9 @@ hook_add='''
     let g:lsp_signs_warning = {'text': '‼'}
     let g:asyncomplete_completion_delay=10
 '''
+
+[[plugins]]
+repo='Yggdroot/indentLine'
+hook_add='''
+let g:indentLine_char='│'
+'''
