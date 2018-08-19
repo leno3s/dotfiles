@@ -71,6 +71,7 @@ set visualbell
 set showmatch
 set matchtime=1
 set matchpairs& matchpairs+=<:>
+set conceallevel=0
 
 " -------------------------------
 " indent

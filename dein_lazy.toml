@@ -14,6 +14,7 @@ let g:Tex_CompileRule_pdf = 'latexmk'
 let g:Tex_ViewRule_dvi = 'xdvi'
 let g:Tex_ViewRule_pdf = 'evince'
 let g:Tex_AutoFolding = 0
+let g:tex_conceal=''
 '''
 
 [[plugins]]
