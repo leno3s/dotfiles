@@ -59,6 +59,7 @@ set noundofile
 " sync clipboard
 " -------------------------------
 set clipboard+=unnamed
+set clipboard+=autoselect
 
 " -------------------------------
 " visualize space, tab, etc
