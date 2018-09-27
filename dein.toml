@@ -65,5 +65,5 @@ hook_add='''
 [[plugins]]
 repo='Yggdroot/indentLine'
 hook_add='''
-let g:indentLine_char='│'
+let g:indentLine_char='|'
 '''
