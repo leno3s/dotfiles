@@ -21,7 +21,7 @@ set number
 " -------------------------------
 " cursor line
 " -------------------------------
-set cursorline
+" set cursorline
 " set cursorcolumn
 
 " -------------------------------
