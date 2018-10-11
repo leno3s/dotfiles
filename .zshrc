@@ -2,6 +2,7 @@
 setopt nonomatch
 export LANG=ja_JP.UTF-8
 bindkey -v
+source ~/dotfiles/.myenvrc
 
 autoload -U compinit
 compinit -u
@@ -10,22 +11,9 @@ setopt print_eight_bit
 setopt auto_cd
 unsetopt bgnice
 
-export DISPLAY=localhost:0.0
-export MY_MISC_BIN=~/git/Misc/bin/
-export PATH=$PATH:/mnt/c/Users/3sodn/git/Misc/bin
-export PATH=$PATH:/home/3sodn/git/cquery/build/release/bin
-export WHOME=/mnt/c/Users/3sodn/
-umask 022
-hash -d hoge=/long/path/to/hogehoge
-
 # EDITOR
 export EDITOR='vim'
 export VISUAL='vim'
-
-# path
-export PYENV_ROOT=~/.pyenv
-export PATH=$PATH:$PYENV_ROOT/bin
-eval "$(pyenv init -)"
 
 # histroy
 setopt auto_pushd
@@ -58,14 +46,11 @@ PROMPT2="%{$fg[green]%}%_> %{$reset_color%}"
 SPROMPT="%{$fg[red]%}correct: %R -> %r [nyae]? %{$reset_color%}"
 
 # aliases
-alias ls='ls -F --color=auto --show-control-chars -I "NTUSER.DAT*"'
-alias la='ls -a -F --color=auto --show-control-chars -I "NTUSER.DAT*"'
-alias ll='ls -al -F --color=auto --show-control-chars -I "NTUSER.DAT*"'
+alias ls='ls     -F --color=auto --show-control-chars -I "NTUSER.*" -I "ntuser.*"'
+alias la='ls -a  -F --color=auto --show-control-chars -I "NTUSER.*" -I "ntuser.*"'
+alias ll='ls -al -F --color=auto --show-control-chars -I "NTUSER.*" -I "ntuser.*"'
 alias lmk='latexmk'
 alias lmkc='latexmk -c'
-alias cmd='cmd.exe /c '
-alias exp='explorer.exe .'
-alias cdw='cd $WHOME'
 function do_enter() {
     if [ -n "$BUFFER" ]; then
         zle accept-line
@@ -83,18 +68,4 @@ function do_enter() {
 }
 zle -N do_enter
 bindkey '^m' do_enter
-
-# for wsl-terminal
-[[ -z "$TMUX" && -n "$USE_TMUX" ]] && {
-    [[ -n "$ATTACH_ONLY" ]] && {
-        tmux a 2>/dev/null || {
-            cd && exec tmux
-        }
-        exit
-    }
-
-    tmux new-window -c "$PWD" 2>/dev/null && exec tmux a
-    exec tmux
-}
-
 
