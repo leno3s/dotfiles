@@ -13,20 +13,54 @@
 % 文字通りsubcaption
 \usepackage[subrefformat=parens]{subcaption}
 % ソースコードの図示とかで使う 手動インストールが必要
-% \usepackage{listings, jlisting}
-% \lstset{
-%     basicstyle={\ttfamily\small}, %書体の指定
-%     frame=tRBl, %フレームの指定
-%     framesep=10pt, %フレームと中身（コード）の間隔
-%     breaklines=true, %行が長くなった場合の改行
-%     linewidth=12cm, %フレームの横幅
-%     lineskip=-0.5ex, %行間の調整
-%     tabsize=2 %Tabを何文字幅にするかの指定
-% }
+\usepackage{listings}
+\lstset{
+  basicstyle={\ttfamily},
+  identifierstyle={\small},
+  commentstyle={\smallitshape},
+  keywordstyle={\small\bfseries},
+  ndkeywordstyle={\small},
+  stringstyle={\small\ttfamily},
+  frame={tb},
+  breaklines=true,
+  columns=[l]{fullflexible},
+  numbers=left,
+  xrightmargin=0zw,
+  xleftmargin=3zw,
+  numberstyle={\scriptsize},
+  stepnumber=1,
+  numbersep=1zw,
+  lineskip=-0.5ex
+}
+\renewcommand{\lstlistingname}{source code}
 % 回路図描けるマン
-% \usepackage[american voltages]{circuitikz}
+\usepackage[american voltages]{circuitikz}
 % 表中に斜線引けるやつ
 % \usepackage{slashbox}
+
+% ページのスタイル変えるやつ ページ番号を右上へ
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{}
+\rhead{}
+\rhead{\thepage{}}
+\cfoot{}
+\renewcommand{\headrulewidth}{0pt}
+
+% units
+\newcommand{\V}[0]{[\mathrm{V}]}
+\newcommand{\mV}[0]{[\mathrm{mV}]}
+\newcommand{\A}[0]{[\mathrm{A}]}
+\newcommand{\mA}[0]{[\mathrm{mA}]}
+\newcommand{\Hz}[0]{[\mathrm{Hz}]}
+\newcommand{\kHz}[0]{[\mathrm{kHz}]}
+\newcommand{\s}[0]{[\mathrm{s}]}
+\newcommand{\ms}[0]{[\mathrm{ms}]}
+\newcommand{\mics}[0]{[\mathrm{\mu s}]}
+\newcommand{\bit}[0]{[\mathrm{bit}]}
+\newcommand{\oC}[0]{\mathrm{^{\circ}C}}
+\newcommand{\dB}[0]{[\mathrm{dB}]}
+\newcommand{\x}[0]{$x$}
 
 \begin{document}
 
