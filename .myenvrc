@@ -1,0 +1,39 @@
+# path list
+
+if [ -e ~/git ]; then
+    export GITDIR=~/git
+
+fi
+
+if [ -e ~/.pyenv ]; then
+    export PYENV_ROOT=~/.pyenv
+    export PATH=$PATH:$PYENV_ROOT/bin
+    eval "$(pyenv init -)"
+fi
+
+if [ -e $GITDIR/Misc ]; then
+    export PATH=$PATH:$GITDIR/Misc/bin
+fi
+
+# if on windows
+if [ -n ((uname -r | grep Microsoft)) ]; then
+    DISPLAY=localhost:0.0
+    WHOME=/mnt/c/Users/3sodn
+    umask 022
+    alias cdw='cd $WHOME'
+    alias exp='explorer.exe .'
+    alias cmd='cmd.exe /c'
+
+    [[ -z "$TMUX" && -n "$USE_TMUX" ]] && {
+        [[ -n "$ATTACH_ONLY" ]] && {
+            tmux a 2>/dev/null || {
+                cd && exec tmux
+            }
+            exit
+        }
+    
+        tmux new-window -c "$PWD" 2>/dev/null && exec tmux a
+        exec tmux
+    }
+fi
+

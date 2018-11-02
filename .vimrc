@@ -21,7 +21,7 @@ set number
 " -------------------------------
 " cursor line
 " -------------------------------
-set cursorline
+" set cursorline
 " set cursorcolumn
 
 " -------------------------------
@@ -65,7 +65,7 @@ set clipboard+=autoselect
 " visualize space, tab, etc
 " -------------------------------
 set list
-set listchars=space:.
+set listchars=space:-
 highlight SpecialKey ctermfg=237 guifg=#3a3a3a
 highlight NonText ctermfg=66 guifg=#5f8787
 set visualbell
