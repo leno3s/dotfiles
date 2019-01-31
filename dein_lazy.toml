@@ -28,3 +28,10 @@ hook_add='''
 let g:clang_c_options = '-std=c11'
 let g:clang_cpp_options = '-std=gnu++11 --pedantic-errors'
 '''
+
+[[plugins]]
+repo = 'mattn/emmet-vim'
+on_ft=['html', 'htm', 'css', 'jsp']
+hook_add='''
+let g:user_emmet_leader_key='<c-l>'
+'''
