@@ -51,6 +51,7 @@ alias la='ls -a  -F --color=auto --show-control-chars -I "NTUSER.*" -I "ntuser.*
 alias ll='ls -al -F --color=auto --show-control-chars -I "NTUSER.*" -I "ntuser.*"'
 alias lmk='latexmk'
 alias lmkc='latexmk -c'
+alias objdump='objdump -M intel'
 function do_enter() {
     if [ -n "$BUFFER" ]; then
         zle accept-line
