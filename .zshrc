@@ -3,6 +3,7 @@ setopt nonomatch
 export LANG=ja_JP.UTF-8
 bindkey -v
 source ~/dotfiles/.myenvrc
+source ~/.profile
 
 autoload -U compinit
 compinit -u
