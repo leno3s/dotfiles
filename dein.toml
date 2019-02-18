@@ -25,12 +25,6 @@ repo = 'cohama/lexima.vim'
 repo = 'prabirshrestha/async.vim'
 
 [[plugins]]
-repo = 'Shougo/neosnippet.vim'
-
-[[plugins]]
-repo = 'Shougo/neosnippet-snippets'
-
-[[plugins]]
 repo = 'prabirshrestha/asyncomplete.vim'
 
 [[plugins]]
