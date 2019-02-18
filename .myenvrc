@@ -11,13 +11,17 @@ if [ -e ~/.pyenv ]; then
     eval "$(pyenv init -)"
 fi
 
+if [ -e /usr/lib/rbenv ]; then
+    eval "$(rbenv init -)"
+fi
+
 if [ -e $GITDIR/Misc ]; then
     export PATH=$PATH:$GITDIR/Misc/bin
 fi
 
 # if on windows
-if [ -n ((uname -r | grep Microsoft)) ]; then
-    DISPLAY=localhost:0.0
+if [ -n "$(uname -r | grep Microsoft)" ]; then
+    DISPLAY=:0.0
     WHOME=/mnt/c/Users/3sodn
     umask 022
     alias cdw='cd $WHOME'
