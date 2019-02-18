@@ -11,6 +11,10 @@ if [ -e ~/.pyenv ]; then
     eval "$(pyenv init -)"
 fi
 
+if [ -e /usr/lib/rbenv ]; then
+    eval "$(rbenv init -)"
+fi
+
 if [ -e $GITDIR/Misc ]; then
     export PATH=$PATH:$GITDIR/Misc/bin
 fi
