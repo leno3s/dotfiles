@@ -11,7 +11,9 @@ if [ -e ~/.pyenv ]; then
     eval "$(pyenv init -)"
 fi
 
-if [ -e /usr/lib/rbenv ]; then
+if [ -e ~/.rbenv ]; then
+    export RBENV_ROOT=~/.rbenv
+    export PATH=$PATH:$RBENV_ROOT/bin
     eval "$(rbenv init -)"
 fi
 
