@@ -3,7 +3,6 @@ setopt nonomatch
 export LANG=en_US.UTF-8
 bindkey -v
 source ~/dotfiles/.myenvrc
-source ~/.profile
 
 autoload -U compinit
 compinit -u
