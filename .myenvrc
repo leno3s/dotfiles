@@ -27,6 +27,10 @@ if [ -n "$(uname -r | grep Microsoft)" ]; then
     alias cdw='cd $WHOME'
     alias exp='explorer.exe .'
     alias cmd='cmd.exe /c'
+    if [ -e ~/.dir_colors ]; then
+        eval `dircolors -b ~/.dir_colors`
+    fi
+
 
     [[ -z "$TMUX" && -n "$USE_TMUX" ]] && {
         [[ -n "$ATTACH_ONLY" ]] && {
