@@ -35,3 +35,7 @@ on_ft=['html', 'htm', 'css', 'jsp']
 hook_add='''
 let g:user_emmet_leader_key='<c-l>'
 '''
+
+[[plugins]]
+repo = 'leafgarland/typescript-vim'
+on_ft = ['typescript']
