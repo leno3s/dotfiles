@@ -24,9 +24,7 @@ setopt hist_ignore_space
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 zstyle ':completion:*:default' menu select=1
 WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
-
 autoload colors
-colors
 
 # prompt
 autoload -Uz vcs_info
@@ -46,6 +44,7 @@ PROMPT2="%{$fg[green]%}%_> %{$reset_color%}"
 SPROMPT="%{$fg[red]%}correct: %R -> %r [nyae]? %{$reset_color%}"
 
 # aliases
+alias l='ls        --color=auto --show-control-chars -I "NTUSER.*" -I "ntuser.*"'
 alias ls='ls     -F --color=auto --show-control-chars -I "NTUSER.*" -I "ntuser.*"'
 alias la='ls -a  -F --color=auto --show-control-chars -I "NTUSER.*" -I "ntuser.*"'
 alias ll='ls -al -F --color=auto --show-control-chars -I "NTUSER.*" -I "ntuser.*"'
