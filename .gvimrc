@@ -5,15 +5,7 @@ set encoding=utf-8
 "---------------------------------------------------------------------------
 if has('win32')
   set guifont=MigMix_1M:h12
-  "set guifont=MS_Mincho:h12:cSHIFTJIS
-  " 行間隔の設定
-  set linespace=1
-  " 一部のUCS文字の幅を自動計測して決める
-  if has('kaoriya')
-    set ambiwidth=auto
-endif
-elseif has('mac')
-  set guifont=Osaka－等幅:h14
+  set linespace=0
 elseif has('xfontset')
   " UNIX用
   set guifontset=a14,r14,k14
@@ -34,11 +26,6 @@ if has('multi_byte_ime') || has('xim')
   autocmd VimEnter * highlight CursorIM guibg=Purple guifg=NONE
   " 挿入モード・検索モードでのデフォルトのIME状態設定
   set iminsert=0 imsearch=0
-  if has('xim') && has('GUI_GTK')
-    " XIMの入力開始キーを設定:
-    " 下記の s-space はShift+Spaceの意味でkinput2+canna用設定
-    "set imactivatekey=s-space
-  endif
   " 挿入モードでのIME状態を記憶させない場合、次行のコメントを解除
   "inoremap <silent> <ESC> <ESC>:set iminsert=0<CR>
 endif
