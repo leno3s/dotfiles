@@ -3,11 +3,10 @@ set encoding=utf-8
 "---------------------------------------------------------------------------
 " fonts
 "---------------------------------------------------------------------------
-if has('win32')
+if has('win64')
   set guifont=MigMix_1M:h12
   set linespace=0
 elseif has('xfontset')
-  " UNIX用
   set guifontset=a14,r14,k14
 endif
 
