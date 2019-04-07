@@ -130,4 +130,5 @@ endif
 " colors
 " -------------------------------
 syntax on
+autocmd VimEnter * nested colorscheme molokai
 highlight PmenuSel cterm=reverse ctermfg=33 ctermbg=222 gui=reverse guifg=#3399ff guibg=#f0e68c

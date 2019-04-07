@@ -13,10 +13,6 @@ hook_post_update = 'make'
 
 [[plugins]]
 repo = 'tomasr/molokai'
-hook_add = '''
-    autocmd VimEnter * nested colorscheme molokai
-
-'''
 
 [[plugins]]
 repo = 'cohama/lexima.vim'
