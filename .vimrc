@@ -11,7 +11,7 @@ set encoding=utf-8
 " -------------------------------
 " beeps
 " -------------------------------
-set visualbell t_vb=
+set belloff=all
 
 " -------------------------------
 " Line number
@@ -77,7 +77,6 @@ endif
 
 highlight SpecialKey ctermfg=237 guifg=#3a3a3a
 highlight NonText ctermfg=66 guifg=#5f8787
-set visualbell
 set showmatch   " displaying match paren
 set matchtime=1
 set matchpairs=(:),[:],{:},<:> " %で飛べる括弧
