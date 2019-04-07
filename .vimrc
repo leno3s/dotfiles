@@ -67,6 +67,7 @@ set clipboard+=autoselect
 set list
 if has('win64')
     set listchars=tab:>.,trail:-
+    " set listchars+=space:· ←これしんどい
 else
     set listchars=tab:>.,space:·,trail:-
 endif
