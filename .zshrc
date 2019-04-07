@@ -25,6 +25,7 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 zstyle ':completion:*:default' menu select=1
 WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 autoload colors
+colors
 
 # prompt
 autoload -Uz vcs_info
