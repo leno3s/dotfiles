@@ -9,7 +9,7 @@ set guifont=MigMix_1M:h8
 set encoding=utf-8
 
 " -------------------------------
-" beep sound
+" beeps
 " -------------------------------
 set visualbell t_vb=
 
@@ -21,12 +21,14 @@ set number
 " -------------------------------
 " cursor line
 " -------------------------------
+" 端末上だと重い
 " set cursorline
 " set cursorcolumn
 
 " -------------------------------
 " key mapping
 " -------------------------------
+" C-spaceにOmni保管させるやつ
 if !has('gui_running')
     augroup term_vim_c_space
         autocmd!
@@ -39,14 +41,15 @@ imap <C-Space> <C-x><C-o>
 " -------------------------------
 " cursor types
 " -------------------------------
+" カーソルの形設定するやつ
 let &t_ti.="\e[1 q"
 let &t_SI.="\e[5 q"
 let &t_EI.="\e[1 q"
 let &t_te.="\e[0 q"
 
-set virtualedit=onemore
-set laststatus=2
-set wildmode=list:longest
+set virtualedit=onemore   "行末
+set laststatus=2          "画面下部のステータスライン
+set wildmode=longest:list,full "コマンドライン補完
 
 " -------------------------------
 " swap, backup files
@@ -75,9 +78,9 @@ endif
 highlight SpecialKey ctermfg=237 guifg=#3a3a3a
 highlight NonText ctermfg=66 guifg=#5f8787
 set visualbell
-set showmatch
+set showmatch   " displaying match paren
 set matchtime=1
-set matchpairs& matchpairs+=<:>
+set matchpairs=(:),[:],{:},<:> " %で飛べる括弧
 autocmd VimEnter * set conceallevel=0
 
 " -------------------------------
@@ -93,17 +96,17 @@ set smartindent
 " -------------------------------
 " templates
 " -------------------------------
+" 新規ファイル時にテンプレートを読み込む
 if has('vim_starting')
     autocmd BufNewFile *.cpp : 0r ~/dotfiles/templates/cpp.cpp
     autocmd BufNewFile *.tex : 0r ~/dotfiles/templates/tex.tex
 endif
 
-
 " -------------------------------
 " etc.
 " -------------------------------
 set nocompatible
-set shellslash
+set shellslash  " \の代わりに/を使えるようにする
 filetype plugin on
 filetype indent on
 
