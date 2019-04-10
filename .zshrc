@@ -45,8 +45,8 @@ PROMPT2="%{$fg[green]%}%_> %{$reset_color%}"
 SPROMPT="%{$fg[red]%}correct: %R -> %r [nyae]? %{$reset_color%}"
 
 # aliases
-alias l='ls        --color=auto --show-control-chars -I "NTUSER.*" -I "ntuser.*"'
-alias ls='ls     -F --color=auto --show-control-chars -I "NTUSER.*" -I "ntuser.*"'
+alias l='ls      -F --color=auto --show-control-chars -I "NTUSER.*" -I "ntuser.*"'
+alias ls='ls        --color=auto --show-control-chars -I "NTUSER.*" -I "ntuser.*"'
 alias la='ls -a  -F --color=auto --show-control-chars -I "NTUSER.*" -I "ntuser.*"'
 alias ll='ls -al -F --color=auto --show-control-chars -I "NTUSER.*" -I "ntuser.*"'
 alias lmk='latexmk'
