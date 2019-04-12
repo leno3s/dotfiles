@@ -40,7 +40,7 @@ xmap <C-k>     <Plug>(neosnippet_expand_target)
 repo='prabirshrestha/vim-lsp'
 depends=['async.vim']
 hook_add='''
-    if executable('clangd')
+    if &filetype=='cpp' && executable('clangd')
         au User lsp_setup call lsp#register_server({
             \ 'name': 'clangd',
             \ 'cmd': {server_info->['clangd']},
@@ -48,6 +48,15 @@ hook_add='''
             \ })
     endif
 
+    if &filetype=='python' && executable('pyls')
+        au User lsp_setup call lsp#register_server({
+            \ 'name': 'pyls',
+            \ 'cmd': {server_info->['pyls']},
+            \ 'whitelist': ['python'],
+            \ })
+    endif
+
+    setlocal omnifunc=lsp#complete
     let g:lsp_signs_enabled = 1         " enable signs
     let g:lsp_diagnostics_echo_cursor = 1 " enable echo under cursor when in normal mode
     let g:lsp_signs_error = {'text': '✗'}
