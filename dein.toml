@@ -57,3 +57,18 @@ repo='Yggdroot/indentLine'
 hook_add='''
 let g:indentLine_char='|'
 '''
+
+[[plugins]]
+repo='scrooloose/nerdtree'
+hook_add='''
+    " show dotfile
+    let g:NERDTreeShowHidden=1
+    map <Space>n :NERDTree<CR>
+'''
+
+[[plugins]]
+repo='jistr/vim-nerdtree-tabs'
+hook_add='''
+    let g:nerdtree_tabs_open_on_console_startup=1
+'''
+
