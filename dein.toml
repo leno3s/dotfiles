@@ -22,9 +22,11 @@ repo = 'prabirshrestha/async.vim'
 
 [[plugins]]
 repo = 'prabirshrestha/asyncomplete.vim'
+depends=['async.vim']
 
 [[plugins]]
 repo = 'prabirshrestha/asyncomplete-lsp.vim'
+depends=['async.vim']
 
 [[plugins]]
 repo='prabirshrestha/asyncomplete-neosnippet.vim'
@@ -36,6 +38,7 @@ xmap <C-k>     <Plug>(neosnippet_expand_target)
 
 [[plugins]]
 repo='prabirshrestha/vim-lsp'
+depends=['async.vim']
 hook_add='''
     if executable('clangd')
         au User lsp_setup call lsp#register_server({
