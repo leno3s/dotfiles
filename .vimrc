@@ -132,3 +132,12 @@ endif
 syntax on
 autocmd VimEnter * nested colorscheme molokai
 highlight PmenuSel cterm=reverse ctermfg=33 ctermbg=222 gui=reverse guifg=#3399ff guibg=#f0e68c
+
+augroup TransparentBG
+    autocmd!
+    autocmd Colorscheme * highlight Normal ctermbg=none
+    autocmd Colorscheme * highlight NonText ctermbg=none
+    autocmd Colorscheme * highlight LineNr ctermbg=none
+    autocmd Colorscheme * highlight Folded ctermbg=none
+    autocmd Colorscheme * highlight EndOfBuffer ctermbg=none
+augroup END
