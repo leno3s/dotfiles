@@ -5,7 +5,19 @@ repo = 'Shougo/unite.vim'
 repo = 'Shougo/neomru.vim'
 
 [[plugins]]
-repo = 'Shougo/neocomplete.vim'
+repo = 'Shougo/deoplete.nvim'
+depends=['nvim-yarp']
+hook_source='''
+    let g:deoplete#enable_at_startup=1
+'''
+
+[[plugins]]
+repo='roxma/nvim-yarp'
+depends=['vim-hug-neovim-rpc']
+# depends pynvim (pip3 install pynvim)
+
+[[plugins]]
+repo='roxma/vim-hug-neovim-rpc'
 
 [[plugins]]
 repo = 'Shougo/vimproc.vim'
