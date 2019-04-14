@@ -23,7 +23,7 @@ fi
 
 # if on windows
 if [ -n "$(uname -r | grep Microsoft)" ]; then
-    DISPLAY=localhost:0.0
+    export DISPLAY=localhost:0.0
     alias cdw='cd $WHOME'
     alias exp='explorer.exe .'
     alias cmd='cmd.exe /c'
