@@ -7,7 +7,7 @@ repo = 'Shougo/neomru.vim'
 [[plugins]]
 repo = 'Shougo/deoplete.nvim'
 depends=['nvim-yarp']
-hook_source='''
+hook_add='''
     let g:deoplete#enable_at_startup=1
 '''
 
