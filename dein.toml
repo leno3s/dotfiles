@@ -4,6 +4,12 @@ repo = 'Shougo/unite.vim'
 [[plugins]]
 repo = 'Shougo/neomru.vim'
 
+[[pluings]]
+repo='Shougo/neosnippet.vim'
+
+[[pluings]]
+repo='Shougo/neosnippet-snippets'
+
 [[plugins]]
 repo = 'Shougo/deoplete.nvim'
 depends=['nvim-yarp']
