@@ -16,9 +16,8 @@ depends=['nvim-yarp']
 hook_add='''
     let g:deoplete#enable_at_startup=1
     set completeopt+=noinsert
-    inoremap <expr><tab> pumvisible() ? "\<C-n>" :
-        \ neosnippet#expandable_or_jumpable() ?
-        \    "\<Plug>(neosnippet_expand_or_jump)" : "\<tab>"
+    inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"   
+    inoremap <expr><S-TAB>  pumvisible() ? "\<C-p>" : "\<S-TAB>" 
 '''
 
 [[plugins]]
