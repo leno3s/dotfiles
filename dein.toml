@@ -98,7 +98,7 @@ repo='scrooloose/nerdtree'
 hook_add='''
     " show dotfile
     let g:NERDTreeShowHidden=1
-    map <Space>n :NERDTree<CR>
+    map <Space>n :NERDTreeToggle<CR>
 '''
 
 [[plugins]]
