@@ -76,6 +76,14 @@ hook_add='''
             \ })
     endif
 
+    if executable('typescript-language-server')
+        call lsp#register_server({
+            \ 'name': 'typescript-ls',
+            \ 'cmd': {server_info->['typescript-language-server --stdio']},
+            \ 'whitelist': ['typescript']
+        \ })
+    endif
+
     setlocal omnifunc=lsp#complete
 '''
 
