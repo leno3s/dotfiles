@@ -70,7 +70,7 @@ endif
 " visualize space, tab, etc
 " -------------------------------
 set list
-if has('win64')
+if has('win64') && !has('nvim')
     set listchars=tab:>.,trail:-
     " set listchars+=space:· ←これしんどい
 else
