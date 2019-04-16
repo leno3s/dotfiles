@@ -61,8 +61,10 @@ set noundofile
 " -------------------------------
 " sync clipboard
 " -------------------------------
-set clipboard+=unnamed
-set clipboard+=autoselect
+if !has("nvim")
+    set clipboard+=unnamed
+    set clipboard+=autoselect
+endif
 
 " -------------------------------
 " visualize space, tab, etc
