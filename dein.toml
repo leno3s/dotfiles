@@ -11,16 +11,6 @@ repo='Shougo/neosnippet.vim'
 repo='Shougo/neosnippet-snippets'
 
 [[plugins]]
-repo = 'Shougo/deoplete.nvim'
-depends=['nvim-yarp']
-hook_add='''
-    let g:deoplete#enable_at_startup=1
-    set completeopt+=noinsert
-    inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"   
-    inoremap <expr><S-TAB>  pumvisible() ? "\<C-p>" : "\<S-TAB>" 
-'''
-
-[[plugins]]
 repo='roxma/nvim-yarp'
 depends=['vim-hug-neovim-rpc']
 # depends pynvim (pip3 install pynvim)
