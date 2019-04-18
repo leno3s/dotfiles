@@ -17,6 +17,10 @@ repo= 'vim-jp/cpp-vim'
 on_ft = ['c', 'cpp']
 
 [[plugins]]
+repo='roxma/nvim-yarp'
+on_source = ['vim-hug-neovim-rpc']
+depends=['vim-hug-neovim-rpc']
+# depends pynvim (pip3 install pynvim)
 
 [[plugins]]
 repo='cespare/vim-toml'
