@@ -3,18 +3,13 @@ repo = 'Shougo/neomru.vim'
 on_source = ['unite.vim']
 
 [[plugins]]
-repo = 'vim-latex/vim-latex'
-on_ft = ['tex']
-hook_add='''
-let g:Tex_DefaultTargetFormat = 'pdf'
-let g:Tex_FormatDependency_pdf = 'pdf'
-
-let g:Tex_CompileRule_pdf = 'latexmk'
-
-let g:Tex_ViewRule_dvi = 'xdvi'
-let g:Tex_ViewRule_pdf = 'evince'
-let g:Tex_AutoFolding = 0
-let g:tex_conceal=''
+repo = 'lervag/vimtex'
+on_ft = 'tex'
+hook_source='''
+    if !exists('g:neocomplete#source#omni#input_patterns')
+        let g:neocomplete#source#omni#input_patterns = {}
+    endif
+    let g:neocomplete#source#omni#input_patterns = g:vimtex#re#neocomplete
 '''
 
 [[plugins]]
@@ -22,12 +17,10 @@ repo= 'vim-jp/cpp-vim'
 on_ft = ['c', 'cpp']
 
 [[plugins]]
-repo = 'justmao945/vim-clang'
-on_ft = ['c', 'cpp']
-hook_add='''
-let g:clang_c_options = '-std=c11'
-let g:clang_cpp_options = '-std=gnu++11 --pedantic-errors'
-'''
+repo='roxma/nvim-yarp'
+on_source = ['vim-hug-neovim-rpc']
+depends=['vim-hug-neovim-rpc']
+# depends pynvim (pip3 install pynvim)
 
 [[plugins]]
 repo='cespare/vim-toml'
