@@ -37,6 +37,10 @@ if !has('gui_running')
     augroup END
 endif
 imap <C-Space> <C-x><C-o>
+" tabとEnterで補完
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<CR>"
 
 " -------------------------------
 " cursor types
