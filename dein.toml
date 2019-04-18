@@ -106,6 +106,6 @@ hook_add='''
 [[plugins]]
 repo='jistr/vim-nerdtree-tabs'
 hook_add='''
-    let g:nerdtree_tabs_open_on_console_startup=1
+    let g:nerdtree_tabs_open_on_console_startup=0
 '''
 
