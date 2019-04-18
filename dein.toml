@@ -19,6 +19,13 @@ depends=['vim-hug-neovim-rpc']
 repo='roxma/vim-hug-neovim-rpc'
 
 [[plugins]]
+repo='Shougo/deoplete.nvim'
+depends=['nvim-yarp', 'vim-hug-neovim-rpc']
+hook_add='''
+    let g:deoplete#enable_at_startup = 1
+'''
+
+[[plugins]]
 repo = 'Shougo/vimproc.vim'
 hook_post_update = 'make'
 
