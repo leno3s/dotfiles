@@ -3,18 +3,13 @@ repo = 'Shougo/neomru.vim'
 on_source = ['unite.vim']
 
 [[plugins]]
-repo = 'vim-latex/vim-latex'
-on_ft = ['tex']
-hook_add='''
-let g:Tex_DefaultTargetFormat = 'pdf'
-let g:Tex_FormatDependency_pdf = 'pdf'
-
-let g:Tex_CompileRule_pdf = 'latexmk'
-
-let g:Tex_ViewRule_dvi = 'xdvi'
-let g:Tex_ViewRule_pdf = 'evince'
-let g:Tex_AutoFolding = 0
-let g:tex_conceal=''
+repo = 'lervag/vimtex'
+on_ft = 'tex'
+hook_source='''
+    if !exists('g:neocomplete#source#omni#input_patterns')
+        let g:neocomplete#source#omni#input_patterns = {}
+    endif
+    let g:neocomplete#source#omni#input_patterns = g:vimtex#re#neocomplete
 '''
 
 [[plugins]]
