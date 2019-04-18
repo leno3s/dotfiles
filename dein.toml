@@ -34,9 +34,6 @@ repo = 'prabirshrestha/async.vim'
 [[plugins]]
 repo = 'prabirshrestha/asyncomplete.vim'
 depends=['async.vim']
-hook_add='''
-    imap <C-Space> <Plug>(asyncomplete#force_refresh)
-'''
 
 [[plugins]]
 repo = 'prabirshrestha/asyncomplete-lsp.vim'
