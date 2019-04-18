@@ -17,12 +17,6 @@ repo= 'vim-jp/cpp-vim'
 on_ft = ['c', 'cpp']
 
 [[plugins]]
-repo = 'justmao945/vim-clang'
-on_ft = ['c', 'cpp']
-hook_add='''
-let g:clang_c_options = '-std=c11'
-let g:clang_cpp_options = '-std=gnu++11 --pedantic-errors'
-'''
 
 [[plugins]]
 repo='cespare/vim-toml'
