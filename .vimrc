@@ -115,7 +115,13 @@ set shellslash  " \の代わりに/を使えるようにする
 filetype plugin on
 filetype indent on
 
-let g:tex_flavor='latex'
+augroup latex
+    autocmd!
+    autocmd FileType tex let g:tex_flavor='latex'
+    autocmd FileType tex let g:tex_conceal=0
+    autocmd FileType tex set tabstop=2
+    autocmd FileType tex set shiftwidth=2
+augroup END
 
 " ===============================
 " dein.vim
