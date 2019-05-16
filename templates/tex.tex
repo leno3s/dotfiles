@@ -5,6 +5,8 @@
 \usepackage{amsmath, amssymb}
 % SI単位を直感的に記述できるやつ
 \usepackage{siunitx}
+% urlの表示統一 bibtex用
+\usepackage{url}
 
 %includegraphics するやつ
 \usepackage[dvipdfmx]{graphicx}
@@ -60,14 +62,51 @@
 \newcommand{\bit}[0]{[\mathrm{bit}]}
 \newcommand{\oC}[0]{\mathrm{^{\circ}C}}
 \newcommand{\dB}[0]{[\mathrm{dB}]}
+\newcommand{\bps}[0]{[\mathrm{bps}]}
+\newcommand{\kbps}[0]{[\mathrm{kbps}]}
+\newcommand{\byte}[0]{[\mathrm{Byte}]}
+\newcommand{\kbyte}[0]{[\mathrm{kByte}]}
+\newcommand{\Div}[0]{[\mathrm{div}]}
+\newcommand{\musDiv}[0]{[\mathrm{\mu s/div}]}
+\newcommand{\micsDiv}[0]{[\mathrm{ms/div}]}
 \newcommand{\x}[0]{$x$}
 
 \begin{document}
 \section{実験環境}
+\begin{itemize}
+  \item 室温: $\oC$
+  \item 湿度: $\%$
+\end{itemize}
+
 \section{実験目的}
+
 \section{使用機器}
+\begin{table}[H]
+  \caption{}
+  \label{tab:machinary}
+  \begin{tabular}{|c|} \hline
+    hoge \\
+  \end{tabular}
+\end{table}
+
 \section{実験内容及びその結果}
+
+\begin{figure}[H]
+  \includegraphics[keepaspectratio, scale=1.0]{./to/path.png}
+  \caption{}
+  \label{fig:}
+\end{figure}
+
 \section{検討事項}
+\begin{enumerate}
+  \item{hoge}
+\end{enumerate}
+
 \section{吟味}
-\section{参考文献}
+\begin{itemize}
+  \item{hoge}
+\end{itemize}
+
+\bibliographystyle{junsrt}
+\bibliography{main}
 \end{document}
