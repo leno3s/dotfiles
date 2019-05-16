@@ -89,6 +89,11 @@ set matchtime=1
 set matchpairs=(:),[:],{:},<:> " %で飛べる括弧
 autocmd VimEnter * set conceallevel=0
 
+" filetype
+augroup ft
+    autocmd BufRead,BufNewFile *.plt setfiletype gnuplot
+augroup END
+
 " -------------------------------
 " indent
 " -------------------------------

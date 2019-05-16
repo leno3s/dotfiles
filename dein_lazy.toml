@@ -45,6 +45,10 @@ repo = 'leafgarland/typescript-vim'
 on_ft = ['typescript']
 
 [[plugins]]
+repo = 'vim-scripts/gnuplot-syntax-highlighting'
+on_ft = 'gnuplot'
+
+[[plugins]]
 repo = 'prabirshrestha/async.vim'
 on_source=['asyncomplete.vim', 'asyncomplete-lsp.vim']
 
