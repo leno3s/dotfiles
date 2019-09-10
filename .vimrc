@@ -111,6 +111,7 @@ set smartindent
 if has('vim_starting')
     autocmd BufNewFile *.cpp : 0r ~/dotfiles/templates/cpp.cpp
     autocmd BufNewFile *.tex : 0r ~/dotfiles/templates/tex.tex
+    autocmd BufNewFile *.bib : 0r ~/dotfiles/templates/bib.bib
 endif
 
 " -------------------------------
