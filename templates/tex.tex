@@ -50,29 +50,11 @@
 \renewcommand{\headrulewidth}{0pt}
 
 % units
-\newcommand{\V}[0]{[\mathrm{V}]}
-\newcommand{\mV}[0]{[\mathrm{mV}]}
-\newcommand{\A}[0]{[\mathrm{A}]}
-\newcommand{\mA}[0]{[\mathrm{mA}]}
-\newcommand{\Hz}[0]{[\mathrm{Hz}]}
-\newcommand{\kHz}[0]{[\mathrm{kHz}]}
-\newcommand{\s}[0]{[\mathrm{s}]}
-\newcommand{\ms}[0]{[\mathrm{ms}]}
-\newcommand{\mus}[0]{[\mathrm{\mu s}]}
-\newcommand{\bit}[0]{[\mathrm{bit}]}
-\newcommand{\oC}[0]{\mathrm{^{\circ}C}}
-\newcommand{\dB}[0]{[\mathrm{dB}]}
-\newcommand{\bps}[0]{[\mathrm{bps}]}
-\newcommand{\kbps}[0]{[\mathrm{kbps}]}
-\newcommand{\byte}[0]{[\mathrm{Byte}]}
-\newcommand{\kbyte}[0]{[\mathrm{kByte}]}
-\newcommand{\Div}[0]{[\mathrm{div}]}
-\newcommand{\msDiv}[0]{[\mathrm{ms/div}]}
-\newcommand{\musDiv}[0]{[\mathrm{\mu s/div}]}
+\newcommand{\sinum}[2]{$\num{#1}\ \si{[#2]}$}
 
 \newcommand{\x}[0]{$x$}
-\newcommand{\in}[0]{_\mathrm{in}}
-\newcommand{\out}[0]{_\mathrm{out}}
+\newcommand{\Vin}[0]{V_\mathrm{in}}
+\newcommand{\Vout}[0]{V_\mathrm{out}}
 
 
 \begin{document}
@@ -96,8 +78,17 @@
 
 \section{実験内容及びその結果}
 
+\begin{table}[H]
+  \centering
+  \caption{}
+  \label{tab:}
+  \begin{tabular}{|c|} \hline
+    hoge \\
+  \end{tabular}
+\end{table}
+
 \begin{figure}[H]
-  \centergin
+  \centering
   % \includegraphics[keepaspectratio, scale=1.0]{./to/path.png}
   \caption{}
   \label{fig:}
