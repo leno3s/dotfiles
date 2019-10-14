@@ -71,3 +71,6 @@ function do_enter() {
 zle -N do_enter
 bindkey '^m' do_enter
 
+function wttr() {
+    curl wttr.in
+}
