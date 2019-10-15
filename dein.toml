@@ -2,15 +2,6 @@
 repo = 'Shougo/unite.vim'
 
 [[plugins]]
-repo = 'Shougo/neomru.vim'
-
-[[pluings]]
-repo='Shougo/neosnippet.vim'
-
-[[pluings]]
-repo='Shougo/neosnippet-snippets'
-
-[[plugins]]
 repo='roxma/nvim-yarp'
 depends=['vim-hug-neovim-rpc']
 # depends pynvim (pip3 install pynvim)
@@ -22,7 +13,7 @@ repo='roxma/vim-hug-neovim-rpc'
 repo='Shougo/deoplete.nvim'
 depends=['nvim-yarp', 'vim-hug-neovim-rpc']
 hook_add='''
-    let g:deoplete#enable_at_startup = 1
+    let g:deoplete#enable_at_startup = 0
 '''
 
 [[plugins]]
@@ -56,3 +47,5 @@ hook_add='''
     let g:nerdtree_tabs_open_on_gui_startup=0
 '''
 
+[[plugins]]
+repo = 'prabirshrestha/asyncomplete.vim'
