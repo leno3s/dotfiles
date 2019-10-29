@@ -109,6 +109,7 @@ set smartindent
 " -------------------------------
 " 新規ファイル時にテンプレートを読み込む
 if has('vim_starting')
+    autocmd BufNewFile *.py : 0r ~/dotfiles/templates/py.py
     autocmd BufNewFile *.cpp : 0r ~/dotfiles/templates/cpp.cpp
     autocmd BufNewFile *.tex : 0r ~/dotfiles/templates/tex.tex
     autocmd BufNewFile *.bib : 0r ~/dotfiles/templates/bib.bib
