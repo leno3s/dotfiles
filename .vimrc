@@ -36,11 +36,15 @@ if !has('gui_running')
         autocmd VimEnter * map! <Nul> <C-Space>
     augroup END
 endif
-imap <C-Space> <C-x><C-o>
-" tabとEnterで補完
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<CR>"
+inoremap <C-Space> <C-x><C-o>
+inoremap <expr><C-Space> pumvisible() ? "<Down>" : "<C-x><C-o>"
+inoremap <expr><C-S-Space> pumvisible() ? "<Up>" : "<C-x><C-o>"
+
+" 補完表示時のEnterで改行をしない
+set completeopt=menuone,noinsert
+inoremap <expr><CR> pumvisible() ? "<C-y>" : "<CR>"
+inoremap <expr><C-n> pumvisible() ? "<Down>" : "<C-n>"
+inoremap <expr><C-p> pumvisible() ? "<Up>" : "<C-p>"
 
 " -------------------------------
 " cursor types
