@@ -37,6 +37,7 @@ if !has('gui_running')
     augroup END
 endif
 inoremap <C-Space> <C-x><C-o>
+noremap <C-\> <ESC>
 inoremap <expr><C-Space> pumvisible() ? "<Down>" : "<C-x><C-o>"
 inoremap <expr><C-S-Space> pumvisible() ? "<Up>" : "<C-x><C-o>"
 
