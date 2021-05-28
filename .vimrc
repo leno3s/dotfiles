@@ -1,20 +1,9 @@
 ﻿"================================
 " vanilla vim
 "================================
-
-" -------------------------------
-" font, encoding
-" -------------------------------
 set encoding=utf-8
-
-" -------------------------------
-" beeps
-" -------------------------------
+set ambiwidth=single
 set belloff=all
-
-" -------------------------------
-" Line number
-" -------------------------------
 set number
 
 " -------------------------------
@@ -56,9 +45,12 @@ let &t_SI.="\e[5 q"
 let &t_EI.="\e[1 q"
 let &t_te.="\e[0 q"
 
-set virtualedit=onemore   "行末
-set laststatus=2          "画面下部のステータスライン
-set wildmode=longest:list,full "コマンドライン補完
+"行末
+set virtualedit=onemore
+"画面下部のステータスライン
+set laststatus=2
+"コマンドライン補完
+set wildmode=longest:list,full
 
 " -------------------------------
 " swap, backup files
@@ -86,12 +78,11 @@ else
     set listchars=tab:>.,space:·,trail:-
 endif
 
-highlight SpecialKey ctermfg=237 guifg=#3a3a3a
-highlight NonText ctermfg=66 guifg=#5f8787
-set ambiwidth=single
-set showmatch   " displaying match paren
+" displaying match paren
+set showmatch
 set matchtime=1
 set matchpairs=(:),[:],{:},<:> " %で飛べる括弧
+" markdownなど編集時のconcealを無効化
 autocmd VimEnter * set conceallevel=0
 
 " filetype
@@ -123,17 +114,12 @@ endif
 " -------------------------------
 " etc.
 " -------------------------------
-set shellslash  " \の代わりに/を使えるようにする
+" \の代わりに/を使えるようにする
+set shellslash
+
+" Filetypes
 filetype plugin on
 filetype indent on
-
-augroup latex
-    autocmd!
-    autocmd FileType tex let g:tex_flavor='latex'
-    autocmd FileType tex let g:tex_conceal=0
-    autocmd FileType tex set tabstop=2
-    autocmd FileType tex set shiftwidth=2
-augroup END
 
 " ===============================
 " dein.vim
