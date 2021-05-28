@@ -14,6 +14,15 @@ hook_add='''
 
 [[plugins]]
 repo = 'vim-latex/vim-latex'
+hook_add='''
+augroup latex
+    autocmd!
+    autocmd FileType tex let g:tex_flavor='latex'
+    autocmd FileType tex let g:tex_conceal=0
+    autocmd FileType tex set tabstop=2
+    autocmd FileType tex set shiftwidth=2
+augroup END
+'''
 
 [[plugins]]
 repo= 'vim-jp/cpp-vim'
