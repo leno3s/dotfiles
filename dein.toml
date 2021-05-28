@@ -2,21 +2,6 @@
 repo = 'Shougo/unite.vim'
 
 [[plugins]]
-repo='roxma/nvim-yarp'
-depends=['vim-hug-neovim-rpc']
-# depends pynvim (pip3 install pynvim)
-
-[[plugins]]
-repo='roxma/vim-hug-neovim-rpc'
-
-[[plugins]]
-repo='Shougo/deoplete.nvim'
-depends=['nvim-yarp', 'vim-hug-neovim-rpc']
-hook_add='''
-    let g:deoplete#enable_at_startup = 0
-'''
-
-[[plugins]]
 repo = 'Shougo/vimproc.vim'
 hook_post_update = 'make'
 
@@ -24,7 +9,7 @@ hook_post_update = 'make'
 repo = 'tomasr/molokai'
 
 [[plugins]]
-repo = 'cohama/lexima.vim'
+repo = 'kana/vim-smartinput'
 
 [[plugins]]
 repo='Yggdroot/indentLine'
