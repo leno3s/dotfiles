@@ -21,6 +21,10 @@ if [ -e $GITDIR/Misc ]; then
     export PATH=$PATH:$GITDIR/Misc/bin
 fi
 
+if [ -e ~/.cargo/bin ]; then
+    export PATH=$PATH:~/.cargo/bin
+fi
+
 # if on windows
 if [ -n "$(uname -r | grep Microsoft)" ]; then
     export DISPLAY=localhost:0.0
