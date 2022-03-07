@@ -88,6 +88,7 @@ autocmd VimEnter * set conceallevel=0
 " filetype
 augroup ft
     autocmd BufRead,BufNewFile *.plt setfiletype gnuplot
+    autocmd BufRead,BufNewFile *.toml setfiletype toml
 augroup END
 
 " -------------------------------
