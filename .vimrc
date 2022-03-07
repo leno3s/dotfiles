@@ -2,7 +2,7 @@
 " vanilla vim
 "================================
 set encoding=utf-8
-set ambiwidth=double
+set ambiwidth=single
 set belloff=all
 set number
 
