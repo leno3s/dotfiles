@@ -2,26 +2,13 @@
 repo = 'lervag/vimtex'
 on_ft = 'tex'
 hook_source='''
+    let g:vimtex_compiler_method = 'latexmk'
     let g:vimtex_compiler_latexmk = {'options': []}
     if !exists('g:neocomplete#source#omni#input_patterns')
         let g:neocomplete#source#omni#input_patterns = {}
     endif
     let g:neocomplete#source#omni#input_patterns = g:vimtex#re#neocomplete
-'''
-hook_add='''
-    autocmd FileType tex let b:vimtex_main = 'main.tex'
-'''
-
-[[plugins]]
-repo = 'vim-latex/vim-latex'
-hook_add='''
-augroup latex
-    autocmd!
-    autocmd FileType tex let g:tex_flavor='latex'
-    autocmd FileType tex let g:tex_conceal=0
-    autocmd FileType tex set tabstop=2
-    autocmd FileType tex set shiftwidth=2
-augroup END
+    autocmd BufWritePost *.tex VimtexCompileSS
 '''
 
 [[plugins]]
@@ -33,13 +20,6 @@ repo='cespare/vim-toml'
 on_ft=['toml']
 
 [[plugins]]
-repo = 'mattn/emmet-vim'
-on_ft=['html', 'htm', 'css', 'jsp']
-hook_add='''
-let g:user_emmet_leader_key='<c-l>'
-'''
-
-[[plugins]]
 repo = 'leafgarland/typescript-vim'
 on_ft = ['typescript']
 
@@ -47,9 +27,3 @@ on_ft = ['typescript']
 repo = 'vim-scripts/gnuplot-syntax-highlighting'
 on_ft = 'gnuplot'
 
-[[plugins]]
-
-
-
-
-'''
