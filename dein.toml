@@ -36,18 +36,6 @@ hook_add='''
 '''
 
 [[plugins]]
-repo = 'prabirshrestha/async.vim'
-on_source = ['vim-lsp', 'asyncomplete.vim']
-
-[[plugins]]
-repo = 'prabirshrestha/asyncomplete-lsp.vim'
-on_source = 'vim-lsp'
-depends = ['vim-lsp', 'asyncomplete']
-
-[[plugins]]
-repo = 'prabirshrestha/asyncomplete.vim'
-
-[[plugins]]
 repo='prabirshrestha/vim-lsp'
 depends=['async.vim', 'asyncomplete.vim']
 hook_add='''
