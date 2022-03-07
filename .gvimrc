@@ -26,7 +26,7 @@ if has('multi_byte_ime') || has('xim')
   " 挿入モード・検索モードでのデフォルトのIME状態設定
   set iminsert=0 imsearch=0
   " 挿入モードでのIME状態を記憶させない場合、次行のコメントを解除
-  "inoremap <silent> <ESC> <ESC>:set iminsert=0<CR>
+  inoremap <silent> <ESC> <ESC>:set iminsert=0<CR>
 endif
 
 "---------------------------------------------------------------------------

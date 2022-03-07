@@ -7,6 +7,9 @@ hook_post_update = 'make'
 
 [[plugins]]
 repo = 'tomasr/molokai'
+hook_add='''
+    autocmd ColorScheme VimEnter * nested colorscheme molokai
+'''
 
 [[plugins]]
 repo = 'kana/vim-smartinput'
