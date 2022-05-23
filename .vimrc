@@ -110,6 +110,7 @@ if has('vim_starting')
     autocmd BufNewFile *.cpp : 0r ~/dotfiles/templates/cpp.cpp
     autocmd BufNewFile *.tex : 0r ~/dotfiles/templates/tex.tex
     autocmd BufNewFile *.bib : 0r ~/dotfiles/templates/bib.bib
+    autocmd BufNewFile *.html : 0r ~/dotfiles/templates/html.html
 endif
 
 " -------------------------------
