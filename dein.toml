@@ -17,7 +17,8 @@ repo = 'kana/vim-smartinput'
 [[plugins]]
 repo='Yggdroot/indentLine'
 hook_add='''
-let g:indentLine_char='|'
+    let g:indentLine_char='|'
+    let g:indentLine_conceallevel = 0
 '''
 
 [[plugins]]
