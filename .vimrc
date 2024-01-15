@@ -5,6 +5,7 @@ set encoding=utf-8
 set ambiwidth=single
 set belloff=all
 set number
+set signcolumn=yes
 
 " -------------------------------
 " cursor line
