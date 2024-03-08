@@ -49,3 +49,6 @@ if [ -n "$(uname -r | grep Microsoft)" ]; then
     }
 fi
 
+if [ -e "/mnt/c/Users/leno/AppData/Local/Programs/Microsoft VS Code/bin" ]; then
+    export PATH=$PATH:"/mnt/c/Users/leno/AppData/Local/Programs/Microsoft VS Code/bin"
+fi
